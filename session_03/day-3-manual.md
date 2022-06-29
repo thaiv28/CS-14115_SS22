@@ -171,7 +171,7 @@ at least show you the very helpful read_csv function that lets you easily import
 import matplotlib.pyplot as plt
 import pandas as pd
 
-data = pd.read_csv("data/salary_data.csv")  # load dataset
+data = pd.read_csv("exploration_data/salary_data.csv")  # load dataset
 
 experience = data["YearsExperience"]
 salary = data["Salary"]
