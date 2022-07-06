@@ -1,8 +1,4 @@
 
-<img src="cs171-logo.png" width="200">
-
-&nbsp;
-
 # Session 07 | Lab
 
 ![Preview](img/final_result.png?raw=true "D3 Projections")
@@ -408,7 +404,7 @@ arrayWithNames.forEach( (element, index) => {
 ```
 
 *Result:*
-![Lab 2 - For-Loops](cs171-for-loop-examples.png?raw=true "Lab 2 - For-Loops")
+![Lab 2 - For-Loops](cs14115-for-loop-examples.png?raw=true "Lab 2 - For-Loops")
 
 
 #### Functions
