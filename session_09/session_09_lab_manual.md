@@ -1,8 +1,3 @@
----
-layout: lab
-exclude: true
----
-
 # Lab 09
 
 ### Learning Objectives
