@@ -10,7 +10,7 @@
 }
 
 .bar:hover {
-  fill: brown;
+  fill: #a52a2a;
 }
 
 .axis {
@@ -44,6 +44,7 @@
   color: #fff;
   border-radius: 2px;
   pointer-events: none;
+  position: absolute;
 }
 
 /* Creates a small triangle extender for the tooltip */

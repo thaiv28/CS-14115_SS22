@@ -5,17 +5,18 @@
 
 // CHART AREA
 
-let margin = {top: 40, right: 20, bottom: 40, left: 90},
-    width = $('#chart-area').width() - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+let margin = {top: 140, right: 50, bottom: 40, left: 50},
+    width = 800 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
-
+// margin conventions
 let svg = d3.select("#chart-area").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+console.log('this is my svg', svg)
 
 // AXIS 
 
@@ -64,24 +65,30 @@ function renderBarChart(data) {
         .exit()
         .data(data)
 
+	console.log(bars)
+
     bars.enter()
         .append("rect")
-        .attr("class", "bar")
+		.attr("class", "bar")
         .attr("x", d => x(d.Location))
         .attr("y", d => y(d.Visitors))
         .attr("height", d => (height - y(d.Visitors)))
         .attr("width", x.bandwidth())
 		.on("mouseover", function(event, d) {
 
+			console.log('tooltip fired', event, d, event.screenX, d.Visitors)
+
             //Get this bar's x/y values, then augment for the tooltip
-            let xPosition = margin.left + parseFloat(d3.select(this).attr("x")) ;
-            let yPosition = margin.top +  y(d.Visitors/2);
+            let xPosition = margin.left + event.screenX ;
+            let yPosition = margin.top +  event.screenY;
+
+			console.log(yPosition)
 
             //Update the tooltip position and value
             d3.select("#tooltip")
+				.attr('class', 'd3-tip')
                 .style("left", xPosition + "px")
                 .style("top", yPosition + "px")
-                .select("#value")
                 .text(d.Visitors);
 
 
