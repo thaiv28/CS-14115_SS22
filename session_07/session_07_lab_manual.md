@@ -1,9 +1,6 @@
 
 # Session 07 | Lab
 
-![Preview](img/final_result.png?raw=true "D3 Projections")
-
-
 ### Learning Objectives
 
 - Understanding the basic idea of interactive DOM manipulation that JS allowed which was so
@@ -35,7 +32,7 @@
 
 ## 0)  Understanding Session 6+
 
-We will start today's session with a breakout room exercise. 
+We will start today's session with a group exercise. 
 
  **Task 1:** Together with your teammates, open the solution for session 6 and check out the
   website and the code. Examine the code and come up with at least three questions that you have. Lastly, come up with one 'quiz' question where you test the HTML and CSS skills or your peers
@@ -48,7 +45,7 @@ We will start today's session with a breakout room exercise.
 
 -----
 
-Now that we have created our grid and have sen some JS in action, it is time dive into the world
+Now that we have created our grid and have seen some JS in action, it is time dive into the world
  of interactive DOM manipulation.
  
 ## 1) JavaScript
@@ -63,14 +60,13 @@ Now that we have created our grid and have sen some JS in action, it is time div
 
 #### a) Manipulating the DOM
 
-with JavaScript, you can change HTML contents. More specifically, you can change the DOM and
+With JavaScript, you can change HTML contents. More specifically, you can change the DOM and
  manipulate its elements. You can actually try that using the developer tools. 
  
  **Task:** Inspect a random website and use the developer tools to change some elements & text.
   
   **Next Step:** Since we want to automatize this process rather than doing the manipulation
    manually we will need some sort of trigger. This is why JavaScript has `event listeners`!
-   trigger.
 
 &nbsp;
 
@@ -97,8 +93,8 @@ When JavaScript is used in HTML pages, JavaScript listens to these events and ca
 ### c) Selecting & Manipulating
 
 There are various methods in JS that allow us to grab a DOM element and manipulate it. The most
- prominent ones are the `.querySelector()` and the `getElementById()` method. Blow you can find
-  the code snipped for the query selector (that works exactly like a CSS selector with tags
+ prominent ones are the `.querySelector()` and the `getElementById()` method. Below you can find
+  the code snippet for the query selector (that works exactly like a CSS selector with tags
   , classes, and IDs). In addition, we also included an entire website example that has an event
    listener that fires 'on click' and selects a paragraph by ID and changes it. Feel free to
     create a new html file and copy-paste the code and try it out. Try to change the method in
@@ -138,15 +134,13 @@ document.querySelector("#my-text").innerHTML = 'changed the text';
 
 *From now on, and in all upcoming labs we will use the common abbreviation JS for the term JavaScript.*
 
-This lab includes three activities and covers JS basics. It is intended to solidify your understanding of JS so that you are able to write your own code in upcoming exercises. If you already know JS well, feel free to skim the text and jump right to the activites. However, if you are new to JS or need a refresher, make sure to read the text closely!
+This lab includes three activities and covers JS basics. It is intended to solidify your understanding of JS so that you are able to write your own code in upcoming exercises. If you already know JS well, feel free to skim the text and jump right to the activities. However, if you are new to JS or need a refresher, make sure to read the text closely!
 
 *The result of this lab may look like the following screenshot. Among other things, you will work with data from amusement parks and museums and do some array manipulations and filtering. At the end you will use JS to call a function that will render a pre-configured bar chart.*
 
 ![Lab 2 - Preview](week-03_lab_preview.png?raw=true "Lab 2 - Preview")
 
 ### A short reiteration of the basic concepts of JavaScript (JS)
-
-We assume that you have completed the pre-reading on JS, so here we are only showing you some examples and use cases of JS basics.
 
 #### Variables
 
@@ -436,7 +430,7 @@ let temperature = "Current temperature: " + toCelsius(34) + " Celsius";
 
 #### Activity II
 
-*In this exercise you should use your data structure from the previous activity (amusement rides) and add two short functions to the JS file.*
+*In this exercise you should use the amusement ride data structure you created earlier and add two short functions to the JS file.*
 
 1. **Create a new function: doublePrices()**
 
@@ -669,7 +663,7 @@ expensiveProducts // Returns: [{ name: "laptop", price: 1600 }, { name: "phone",
 
 #### Activity III
 
-This activity summarizes most of the learned concepts of the first two labs. It includes different aspects of HTML, CSS and JS and will result in a bar chart visualization.
+This activity summarizes most of the learned concepts of today's and yesterday's lab. It includes different aspects of HTML, CSS and JS and will result in a bar chart visualization.
 
 We will provide a template with a basic *HTML structure*, a *dataset* (stored in a JSON array) and a *complete JS function* that renders a bar chart with D3. Your primary tasks are data filtering and controlling the workflow. In the following labs we will introduce D3 and show you how to create these visualizations yourself.
 

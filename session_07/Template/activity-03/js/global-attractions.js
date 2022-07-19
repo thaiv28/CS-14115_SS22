@@ -1,4 +1,4 @@
-let attractionData = [
+var attractionData = [
   {
     "Location": "MAGIC KINGDOM at Walt Disney World, Lake Buena Vista, FL",
     "Category": "Theme Park",
