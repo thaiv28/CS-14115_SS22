@@ -1,0 +1,46 @@
+/* PRE-CONFIGURED STYLES */
+
+
+/****************/
+/*   BAR-CHART  */
+/****************/
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x-axis path {
+  display: none;
+}
+
+.axis-title {
+	fill: #888;
+	font-size: 11px;
+}
+
+
+/****************/
+/*   TOOLTIPS   */
+/****************/
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  font: 12px sans-serif;
+  /*  pointer-events: none;	This line needs to be removed */
+}
