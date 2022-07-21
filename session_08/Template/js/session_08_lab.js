@@ -5,26 +5,51 @@
 dataFiltering();
 
 function dataFiltering() {
-	let attractions = attractionData;
 
-	attractions = attractions.splice(0,5)
-	console.log(attractions)
+	// sort attractionData
+	let sortedAttractions = attractionData.sort((a,b) => {
+		return b.Visitors - a.Visitors
+	})
 
-	console.log('hello from your js file. Good luck with the lab!')
+	// slice top 5
+	let slicedAttractions = sortedAttractions.slice(0,5)
 
-	renderBarChart(attractions)
+	// logging data
+	//console.log(slicedAttractions)
 
-	/* **************************************************
-	 *
-	 * ADD YOUR CODE HERE (ARRAY/DATA MANIPULATION)
-	 *
-	 * CALL THE FOLLOWING FUNCTION TO RENDER THE BAR-CHART:
-	 *
-	 * renderBarChart(data)
-	 *
-	 * - 'data' must be an array of JSON objects
-	 * - the max. length of 'data' is 5
-	 *
-	 * **************************************************/
+	renderBarChart(slicedAttractions)
+
+}
+
+
+
+
+function dataManipulation() {
+	//console.log('changing category')
+
+	// grab category
+	let category = document.getElementById("attraction-category").value
+
+	let filteredData = []
+
+	if (category !== "all"){
+		// filter by category
+		filteredData = attractionData.filter(function (attractionDictionary){
+			return attractionDictionary.Category === category
+		})
+	} else {
+		filteredData = attractionData;
+	}
+
+	// sort attractionData
+	let sortedAttractionsByCategory = filteredData.sort((a,b) => {
+		return b.Visitors - a.Visitors
+	})
+
+	let slicedAttractions = sortedAttractionsByCategory.slice(0,5)
+
+	renderBarChart(slicedAttractions)
+
+
 
 }
