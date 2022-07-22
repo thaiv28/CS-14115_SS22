@@ -57,36 +57,35 @@ const ferris = new Ride(93, "Ferris Wheel", 3, ["Tuesday"], false)
 
 rides = [drop, water, ferris]
 
-
-
-function logging(string){
-    console.log(string)
-}
-
 function doublePrices(rideList){
+    let newList = JSON.parse(JSON.stringify(rideList))
+
     rideList.forEach((ride, index) => {
-        if(index != 1) {
-            ride.price = ride.price * 2;
+        if(index !== 1) {
+            newList[index].price = ride.price * 2;
         }
     });
+    //console.log(newList)
+    return newList;
 }
 
-doublePrices(rides)
+
 
 function debugRides(rideList) {
-    rideList.forEach((ride, index) => {
+    rideList.forEach((ride) => {
         console.log(ride.name + " " + ride.price)
     });
 }
 
 function printRides(rideList) {
     let result = '';
-    rideList.forEach((ride, index) => {
+    rideList.forEach((ride) => {
         result += ride.name + ": " + ride.price + "<br/>"
     });
     return result;
 }
 
+rides = doublePrices(rides)
 debugRides(rides)
 
 document.getElementById("rides-price").innerHTML = printRides(rides);

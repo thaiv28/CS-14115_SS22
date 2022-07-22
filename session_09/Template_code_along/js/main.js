@@ -46,7 +46,7 @@ function drawChart(data){
 	// scales
 
 	// x
-	let IncomeScale = d3.scaleLinear()
+	let IncomeScale = d3.scaleLog()
 		.domain([d3.min(data, d=> d.Income),d3.max(data, d=>d.Income)])
 		.range([0, width])
 
@@ -82,16 +82,9 @@ function drawChart(data){
 	let yAxisGroup = svg.append('g')
 		.attr("class", "y-axis")
 
-
 	yAxisGroup.call(yAxis)
 
-
-
 	console.log(xAxis)
-
-
-
-
 
 	console.log(IncomeScale(13000), LifeExpectancyScale(75))
 
@@ -99,18 +92,14 @@ function drawChart(data){
 	let circles = svg.selectAll(".country-circle").data(data)
 
 	//
-	circles.enter().append("circle")
-		.attr("r", function(d) {
-			return PopulationScale(d.Population)
-		})
+	circles.enter()
+		.append("circle")
+		// .append("class", "country-circle")
+		.attr("r", d => PopulationScale(d.Population))
 		.attr("cx", d => IncomeScale(d.Income))
 		.attr("cy", d => LifeExpectancyScale(d.LifeExpectancy))
-		.attr("fill", function (d) {
-			return colorPalette(d["Region"])
-		} )
-	//console.log(circles)
-
-
-
+		.attr("fill", d => colorPalette(d["Region"]))
+		.attr("id", (d, i) => '${circle} + i')
+	console.log(circles)
 
 }

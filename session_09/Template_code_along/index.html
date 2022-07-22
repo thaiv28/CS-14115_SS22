@@ -12,10 +12,14 @@
 </head>
 <body>
 
-	<div class="container">
-
-		<h1>Wealth &amp; Health of Nations</h1>
-
+	<div class="container" style = "height: 100vh; margin: 3vh; width: 700px">
+		<div class="row justify-content-center">
+				<div class="align-self-center">
+					<h1>Wealth &amp; Health of Nations</h1>
+					<button onclick="doStuff()">Do Stuff</button>
+					<button onclick="switchColor()">Switch Color</button>
+				</div>
+		</div>
 		<!-- Parent container for the scatterplot -->
 		<div id="chart-area"></div>
 
@@ -31,7 +35,7 @@
 	<script src="https://d3js.org/d3.v6.min.js"></script>
 
 	<!-- own js files -->
-	<script src="js/main.js"></script>
+	<script src="../template/js/main.js"></script>
 
 </body>
 </html>

@@ -69,20 +69,23 @@ function renderBarChart(data) {
         .attr("class", "bar")
         .attr("x", d => x(d.Location))
         .attr("y", d => y(d.Visitors))
+		.attr("width", x.bandwidth())
+		//.attr("height", d => (height + y(d.Location)))
+		.transition().duration(500)
         .attr("height", d => (height - y(d.Visitors)))
-        .attr("width", x.bandwidth())
-		.on("mouseover", function(event, d) {
 
-			// explore event
-
-            //Show the tooltip
-            //d3.select("")...
-		})
-		.on("mouseout", function(d) {
-
-            //Hide the tooltip
-            // d3.select("
-		});
+		// .on("mouseover", function(event, d) {
+		//
+		// 	// explore event
+		//
+        //     //Show the tooltip
+        //     //d3.select("")...
+		// })
+		// .on("mouseout", function(d) {
+		//
+        //     //Hide the tooltip
+        //     // d3.select("
+		// });
 
 
 	// ---- DRAW AXIS	----

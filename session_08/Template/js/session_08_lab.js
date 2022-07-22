@@ -2,27 +2,9 @@
 // Global variable with 60 attractions (JSON format)
 // console.log(attractionData);
 
-dataFiltering();
+let typePark = "all";
 
-function dataFiltering() {
-
-	// sort attractionData
-	let sortedAttractions = attractionData.sort((a,b) => {
-		return b.Visitors - a.Visitors
-	})
-
-	// slice top 5
-	let slicedAttractions = sortedAttractions.slice(0,5)
-
-	// logging data
-	//console.log(slicedAttractions)
-
-	renderBarChart(slicedAttractions)
-
-}
-
-
-
+renderBarChart(dataFiltering());
 
 function dataManipulation() {
 	//console.log('changing category')
@@ -49,7 +31,18 @@ function dataManipulation() {
 	let slicedAttractions = sortedAttractionsByCategory.slice(0,5)
 
 	renderBarChart(slicedAttractions)
+}
 
+function dataManipulation(){
+	let selectBox = document.getElementById("attraction-category");
+	let selectedValue = selectBox.value;
 
+	console.log(selectedValue);
+	typePark = selectBox.value;
 
+	renderBarChart(dataFiltering());
+}
+
+function checkType(value) {
+	return value.Category == typePark;
 }

@@ -5,12 +5,7 @@ var attractionData = [
     "Visitors": 18588000,
     "Entry": "Paid"
   },
-  {
-    "Location": "TOKYO DISNEYLAND, Tokyo, Japan",
-    "Category": "Theme Park",
-    "Visitors": 17214000,
-    "Entry": "Paid"
-  },
+
   {
     "Location": "DISNEYLAND, Anaheim, CA",
     "Category": "Theme Park",
